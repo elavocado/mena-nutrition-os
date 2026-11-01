@@ -24,6 +24,7 @@ html[lang="en"] .bubble2{right:0;left:auto}
 .pick-art.air{background:linear-gradient(125deg,#fff0e2,#e7e9ce)}
 .pick-art.cold{background:linear-gradient(125deg,#f4f7d7,#dcf0e9)}
 .pick-art.rice{background:linear-gradient(125deg,#e5efda,#c8eadb)}
+.pick-art.pasta{background:linear-gradient(125deg,#fcead9,#f3dcbf)}
 .pick-tag{position:absolute;top:12px;inset-inline-start:12px;background:#ffffffe3;color:#34694f;border-radius:9px;padding:5px 9px;font-size:10px;font-weight:800}
 .pick-body{padding:17px 17px 12px;flex:1}
 .pick-body h4{font-size:16px;line-height:1.4;font-weight:900;margin:0 0 7px}
