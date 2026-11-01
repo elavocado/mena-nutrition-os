@@ -17,6 +17,7 @@
     eggs: {en:'egg',ar:'بيضة'},
     cheese: {en:'low-lactose / lactose-free cheese slice',ar:'شريحة جبنة لايت قليلة أو بدون لاكتوز'},
     rice: {en:'100 g dry-rice scoop',ar:'مكيال رز نيّ 100 جم'},
+    pasta: {en:'100 g dry pasta (⅕ of a 500 g bag)',ar:'100 جم مكرونة نيّة (خُمس كيس 500 جم)'},
     potato: {en:'750 g ready-cut potato-wedges bag',ar:'كيس بطاطس Wedges جاهز 750 جم'},
     veg: {en:'300 g Buttergemüse / plain veg carton',ar:'علبة خضار 300 جم'},
     banana: {en:'banana',ar:'موزة'},
@@ -93,6 +94,22 @@
     'One 400 g pack + rice + vegetables','علبة لحمة 400 جم + رز + خضار',
     ['Cook two scoops of rice and a 300 g vegetable carton in the rice cooker.','Cook the 400 g lean beef mince thoroughly in an air-fryer-safe dish or pan, checking a 71°C core.','Mix and split into two meals. Never put raw mince directly onto rice unless the cooker explicitly supports safe meat cooking.'],
     ['سوّي مكيالين رز وعلبة خضار 300 جم في الريس كوكر.','سوّي علبة لحمة مفرومة 400 جم في طبق مناسب للإير فراير أو طاسة لحد 71°C.','اخلط واقسم وجبتين. متحطش اللحمة النيّة فوق الرز إلا لو الجهاز مصمم لكده.'],{batch:true});
+  // Pasta variations: dry Combino 500 g bag divided into five 100 g portions; all preserve two-meal batch logic.
+  add('m_salmon_pasta',['lunch','dinner'],'🍝','pasta',35,{salmon:2,pasta:2,veg:1},
+    'Salmon & vegetable pasta','مكرونة باللاكس والخضار',
+    '2 salmon fillets · ⅖ of a pasta bag · 300 g vegetables','قطعتين لاكس · خُمسين كيس مكرونة · خضار',
+    ['Divide a 500 g Combino Penne/Fusilli bag into five roughly equal portions. Cook two portions in the rice cooker only if its manual permits boiling pasta; otherwise use a pot.','Air-fry 2 unwrapped salmon fillets until fully cooked. Heat one 300 g vegetable carton and stir it into the drained pasta with a little olive oil.','Split the finished food into two meals and chill the second promptly.'],
+    ['قسّم كيس مكرونة Combino الـ500 جم لخمس حصص متقاربة. اسلق حصتين في الريس كوكر لو تعليماته تسمح بسلق المكرونة، وإلا استخدم حلة.','سوّي قطعتين لاكس بعد نزع التغليف في الإير فراير. سخّن علبة خضار 300 جم وقلّبها مع المكرونة بعد تصفيتها ونقطة زيت زيتون.','اقسم الوجبة على مرتين وبرّد التانية بسرعة.'],{batch:true});
+  add('m_chicken_pasta',['lunch','dinner'],'🍗','pasta',40,{chicken:2,pasta:2,veg:1},
+    'Chicken & veggie pasta','مكرونة بالفراخ والخضار',
+    '2 chicken pieces · 200 g dry pasta · one veg carton','قطعتين فراخ · خُمسين كيس مكرونة · خضار',
+    ['Cook two fifths of a 500 g Combino pasta bag, using the rice cooker only if it supports pasta cooking.','Air-fry 2 chicken portions to 74°C in the centre. Heat a 300 g vegetable carton and toss it with the drained pasta and a little olive oil.','Divide into two meals; refrigerate the second promptly.'],
+    ['اسلق خُمسين كيس مكرونة Combino الـ500 جم في الريس كوكر لو بيدعم سلق المكرونة.','سوّي قطعتين فراخ في الإير فراير لحد 74°C من جوه. سخّن علبة خضار 300 جم وقلّبها مع المكرونة ونقطة زيت زيتون.','اقسم الأكل وجبتين وبرّد التانية بسرعة.'],{batch:true});
+  add('m_beef_pasta',['lunch','dinner'],'🥩','pasta',35,{beef:1,pasta:2,veg:1},
+    'Lean minced beef pasta','مكرونة باللحمة المفرومة اللايت',
+    'One 400 g mince pack · ⅖ pasta bag · vegetables','عبوة لحمة 400 جم · خُمسين كيس مكرونة · خضار',
+    ['Cook two fifths of a 500 g Combino pasta bag as directed; a rice cooker works only if its manual supports boiling pasta.','Cook the 400 g lean minced beef thoroughly to 71°C in an air-fryer-safe dish or pan. Heat one 300 g vegetable carton.','Toss everything with a little olive oil, divide into two meals and chill the second promptly.'],
+    ['اسلق خُمسين كيس مكرونة Combino الـ500 جم. استخدم الريس كوكر بس لو تعليماته تسمح بالمكرونة.','سوّي عبوة اللحمة المفرومة اللايت 400 جم لحد 71°C من جوه في طبق مناسب للإير فراير أو طاسة، وسخّن علبة خضار 300 جم.','اخلط كله مع نقطة زيت زيتون واقسم وجبتين، وبرّد التانية بسرعة.'],{batch:true});
   add('m_salmon_wedges',['lunch','dinner'],'🐠','air',35,{salmon:2,potato:1,veg:1},
     'Salmon & ready-cut wedges','لاكس وبطاطس Wedges',
     'No cutting · one potato bag','مفيش تقطيع · كيس بطاطس جاهز',
@@ -120,6 +137,11 @@
     'One can, one scoop and half a veg carton','علبة تونة، مكيال رز، ونص علبة خضار',
     ['Cook one 100 g rice scoop and half a 300 g vegetable carton.','Stir in one drained tuna can after cooking. Refrigerate the unused half vegetable carton correctly.'],
     ['سوّي مكيال رز نيّ ونص علبة خضار 300 جم.','بعد الطبخ ضيف علبة تونة مصفّاة، واحفظ نص علبة الخضار الباقي بطريقة آمنة.']);
+  add('d_tuna_pasta',['dinner','fast'],'🥫','pasta',20,{tuna:1,pasta:1,veg:.5},
+    '20-minute tuna pasta','مكرونة بالتونة في 20 دقيقة',
+    '1 tuna can · ⅕ pasta bag · half a vegetable carton','علبة تونة · خُمس كيس مكرونة · نص علبة خضار',
+    ['Take one fifth of a 500 g Combino Penne/Fusilli bag (about 100 g dry). Cook it in your rice cooker only if the manual supports boiling pasta; otherwise use a pot.','Heat half a 300 g vegetable carton. Drain the pasta and tuna can, then mix with a little olive oil.','Eat whenever you need a main meal; refrigerate any leftover cooked food promptly.'],
+    ['خد خُمس كيس مكرونة Combino الـ500 جم (حوالي 100 جم نيّ). اسلقه في الريس كوكر لو تعليماته تسمح، وإلا في حلة.','سخّن نص علبة خضار 300 جم. صفّي المكرونة وعلبة التونة وقلّبهم مع نقطة زيت زيتون.','وجبة أساسية سريعة، ولو فاضل منها احفظه في التلاجة بسرعة.']);
   add('d_egg_veg',['dinner','fast'],'🍳','air',15,{eggs:2,veg:.5,cheese:2},
     'Quick eggs & vegetables','بيض وخضار وجبنة بسرعة',
     'Two eggs + half vegetable carton','بيضتين + نص علبة خضار',
@@ -134,7 +156,7 @@
   const starter = {
     b_yogurt:2,b_overnight:1,b_eggs_cheese:2,b_egg_potato:2,
     s_banana:7,s_yogurt:3,s_eggs:4,
-    m_salmon_rice:2,m_chicken_rice:2,m_tuna_rice:1,m_beef_wedges:1,m_chicken_wedges:1
+    m_salmon_rice:1,m_salmon_pasta:1,m_chicken_rice:1,m_chicken_pasta:1,m_tuna_rice:1,m_beef_wedges:1,m_chicken_wedges:1
   };
   let saved = {};
   try { saved = JSON.parse(localStorage.getItem(key)) || {}; } catch (_) {}
@@ -161,7 +183,7 @@
   const hints={
     breakfast:{en:'Quick breakfasts from food you already enjoy. The yogurt option is lactose-free.',ar:'اختيارات فطار سهلة، والزبادي فيها لاكتوز فري.'},
     snack:{en:'Ready-to-grab snacks for when a busy day gets away from you.',ar:'سناكس جاهزة تمسكها في أي وقت زحمة.'},
-    lunch:{en:'One cooked batch makes two main meals. Use the second for dinner or tomorrow.',ar:'كل طبخة رئيسية تطلع وجبتين. التانية للعشا أو بكرة.'},
+    lunch:{en:'Choose rice, pasta or wedges. Each batch makes two main meals.',ar:'بدّل بين الرز والمكرونة والبطاطس. كل طبخة تطلع وجبتين.'},
     dinner:{en:'Choose a main batch, a quick option, or leftovers from lunch.',ar:'اختار طبخة رئيسية أو عشا سريع أو بواقي الغدا.'},
     fast:{en:'Minimal-prep rescue choices, without a food rule or penalty.',ar:'اختيارات إنقاذ بمجهود بسيط، من غير لوم أو تعويض.'}
   };
@@ -201,8 +223,9 @@
         n('tuna')&&line('tuna',tr('Tuna in water / Thunfisch','تونة Thunfisch'),tr(fmt(n('tuna'))+' cans',fmt(n('tuna'))+' علب')),
         n('eggs')&&line('eggs',tr('Eggs / Eier','بيض Eier'),tr(fmt(n('eggs'))+' eggs',fmt(n('eggs'))+' بيضة'))
       ].filter(Boolean)},
-      {title:tr('🍚 Rice & potatoes','🍚 رز وبطاطس'),note:tr('Use your scoop; no daily scale','بمكيالك، من غير ميزان يومي'),rows:[
+      {title:tr('🍚 Rice, pasta & potatoes','🍚 رز ومكرونة وبطاطس'),note:tr('Rice: your scoop · pasta: fifths of a 500 g bag','الرز بالمكيال · المكرونة بخُمس الكيس'),rows:[
         n('rice')&&line('rice',tr('Golden Sun dry rice','رز Golden Sun'),tr(fmt(n('rice'))+' × 100 g scoops ≈ '+Math.ceil(n('rice')/10)+' × 1 kg bags',fmt(n('rice'))+' مكاييل 100 جم ≈ '+Math.ceil(n('rice')/10)+' كيس × 1 كجم')),
+        n('pasta')&&line('pasta',tr('Combino Penne / Fusilli (dry pasta)','مكرونة Combino Penne / Fusilli'),tr(fmt(n('pasta'))+' × 100 g portions ≈ '+Math.ceil(n('pasta')/5)+' × 500 g bags',fmt(n('pasta'))+' حصص × 100 جم تقريبًا = '+Math.ceil(n('pasta')/5)+' كيس × 500 جم')),
         n('potato')&&line('potato',tr('Ready-cut frozen potato wedges','بطاطس Wedges جاهزة'),tr(Math.ceil(n('potato'))+' × 750 g bags',Math.ceil(n('potato'))+' أكياس × 750 جم')),
         n('oats')&&line('oats',tr('Oats / Haferflocken','شوفان Haferflocken'),tr(fmt(n('oats'))+' tbsp · get 1 small bag',fmt(n('oats'))+' معلقة · كيس صغير'))
       ].filter(Boolean)},
