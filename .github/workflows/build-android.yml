@@ -1,0 +1,52 @@
+name: Android APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [android-app]
+    paths:
+      - "src/**"
+      - "public/**"
+      - "android/**"
+      - "package*.json"
+      - "capacitor.config.ts"
+      - "index.html"
+      - "vite.config.ts"
+      - "app-source.zip"
+      - ".github/workflows/build-android.yml"
+
+jobs:
+  debug-apk:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Unpack portable source if stored as a ZIP
+        run: |
+          if [ ! -f package.json ]; then unzip -n -q app-source.zip; fi
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+      - uses: android-actions/setup-android@v3
+      - name: Install Android SDK
+        run: sdkmanager "platforms;android-36" "build-tools;36.0.0"
+      - name: Install JavaScript dependencies
+        run: npm ci
+      - name: Compile and sync
+        run: npm run android:sync
+      - name: Build installable debug APK
+        working-directory: android
+        run: ./gradlew assembleDebug --no-daemon
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: Mena-Nutrition-Android-APK
+          path: android/app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
+          retention-days: 30
